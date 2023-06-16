@@ -40,10 +40,22 @@ class PortfoliosController < ApplicationController
     def show      
     end
 
+    def destroy 
+      # Destroy/delete the record 
+      @portfolio_item.destroy
+
+      # Redirect
+      respond_to do |format|
+        format.html { redirect_to portfolios_url, notice: "Portfolio item was successfully destroyed." }
+        format.json { head :no_content }
+      end    
+    end
+
     private
     def set_portfolio
+      # perform the lookup
       @portfolio_item = Portfolio.find(params[:id])
-    end
+    end 
 
     def portfolio_params
         params.require(:portfolio).permit(:title, :subtitle ,:body)
