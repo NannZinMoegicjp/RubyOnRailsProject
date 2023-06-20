@@ -29,7 +29,7 @@
     <% end %>
     <div class="container-fluid">
     <%= yield %>
-    <%= render "shared/nav" %>
+    <%= render "shared/nav", location: "bottom" %>
     <% if session[:source]%>
     <p>
     Thanks for visiting me from <%= session[:source]%>
