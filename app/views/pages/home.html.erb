@@ -3,10 +3,7 @@
 Hi, <%= current_user.first_name %>
 <% end %>
 </h1>
-<%# <h1>Blog posts</h1> %>
-<%# <%= @posts.inspect%> 
-<%# <h1>Skills</h1> %>
-<%# <%= @skills.inspect%> 
+<%= @skills.inspect%>
 <% if session %>
-<p><%= session.inspect%></p>
+<p><%= session.inspect %> </p>
 <% end %>
