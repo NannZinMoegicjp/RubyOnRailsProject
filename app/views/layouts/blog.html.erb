@@ -19,14 +19,8 @@
     <% end %>
     <% if alert%>
     <p class="alert"><%= alert %></p>
-    <% end %>
-    
-    <% if current_user.is_a?(User) %>
-      <%= button_to "Logout", destroy_user_session_path, method: :delete,class: "link-button"%>
-    <% else %>
-      <div class="ms-2"><%= link_to "Register", new_user_registration_path%>
-      <%= link_to "Login", new_user_session_path%></div>      
-    <% end %>
+    <% end %>    
+    <%= login_helper %>
     <div class="container-fluid">
     <%= yield %>
     <%= render "shared/nav", location: "bottom" %>
