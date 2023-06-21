@@ -2,7 +2,7 @@ class PortfoliosController < ApplicationController
   before_action :set_portfolio, only: %i[ show edit update destroy ]
   layout 'portfolio'  
   def index
-        @portfolio_items = Portfolio.all
+        @portfolio_items = Portfolio.limit(3)
     end
 
     def angular
@@ -43,7 +43,7 @@ class PortfoliosController < ApplicationController
       end
     end
 
-    def show      
+    def show    
     end
 
     def destroy 
